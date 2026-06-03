@@ -3,7 +3,7 @@
 <a href="https://github.com/vmo64/archpower-linux-installer-360/releases/">
     <img src="https://img.shields.io/badge/Latest%20ISO-2026.06.-cyan.svg" /></a>
     
-Automatic installer script for the ArchPOWER Linux Distro on the PS3.
+Automatic installer script for the ArchPOWER Linux Distro on the Xbox 360.
 
 ## Features
 - Automatic and manual partitioning (Internal and External HDD, ext3/ext4/btrfs)
