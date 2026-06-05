@@ -266,10 +266,11 @@ install() {
         echo " "
 
         #printf 'timeout=100\ndefault=ArchPower\nArchPower="/vmlinuz-linux-ps3 arch=ppc64 quiet loglevel=N video=ps3fb:mode:131 root=PARTUUID=%s initrd=/initramfs-linux-ps3.img"\n' "$PART_UUID" > /mnt/boot/kboot.conf # Configure Kboot/PetitBoot Entry
-        printf 'timeout=5\ndefault=ArchPower\nArchPower="/vmlinuz-linux-xenon arch=ppc loglevel=N root=%s initrd=/initramfs-linux-xenon.img"\n' "$PART2" > /mnt/boot/kboot.conf # Configure Kboot/PetitBoot Entry (FIX FOR THE TIME BEING WHILE KERNEL IS BEING PATCHED AGAIN)
+        #printf 'timeout=5\ndefault=ArchPower\nArchPower="/vmlinuz-linux-xenon arch=ppc loglevel=N root=%s initrd=/initramfs-linux-xenon.img"\n' "$PART2" > /mnt/boot/kboot.conf # Configure Kboot/PetitBoot Entry (FIX FOR THE TIME BEING WHILE KERNEL IS BEING PATCHED AGAIN)
+        printf 'timeout=5\ndefault=ArchPower\nArchPower="udb0:/vmlinuz-linux-xenon root=/dev/sdb2 initrd=udb0:/initramfs-linux-xenon.img coherent_pool=16M arch=ppc loglevel=N rw"\n' "$PART2" > /mnt/boot/kboot.conf # better entry (FIX FOR THE TIME BEING WHILE KERNEL IS BEING PATCHED AGAIN)
         sleep 1;
         #printf '[main]\ndhcp=dhclient\n' > /mnt/etc/NetworkManager/conf.d/dhcp-client.conf # Autoconfigure network on boot
-        
+
 
         echo " "
         echo "Configuring and installing system-manager service"
